@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+[user]
+	name = ziad
+	email = madkour.ziad@gmail.com
+	signingkey = /home/ziad/.ssh/id_rsa.pub
+[core]
+	editor = nvim
+[gpg]
+	format = ssh
+[push]
+	autoSetupRemote = true
