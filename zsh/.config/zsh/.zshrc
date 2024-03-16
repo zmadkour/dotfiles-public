@@ -42,6 +42,7 @@ _comp_options+=(globdots)		# Include hidden files.
 safe-source $ZDOTDIR/zinit/zinit.zsh
 
 safe-source $ZDOTDIR/zinit/ziplugins.zsh
+safe-source $ZDOTDIR/zinit/fzf-bindings.zsh
 safe-source $ZDOTDIR/themes/theme.zsh
 safe-source $ZDOTDIR/key-bindings.zsh
 

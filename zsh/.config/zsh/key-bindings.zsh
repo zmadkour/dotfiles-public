@@ -6,4 +6,4 @@ bindkey -M viins '^H' backward-kill-word
 bindkey "^?" backward-delete-char #make backspace work after exiting vicmd mode
 bindkey '\140' forward-word
 bindkey "^[[3~" delete-char
-WORDCHARS=${WORDCHARS//[\/.-]}
+WORDCHARS=${WORDCHARS//[\/.-_]}
