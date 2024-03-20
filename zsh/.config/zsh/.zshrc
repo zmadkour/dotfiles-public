@@ -37,16 +37,29 @@ _comp_options+=(globdots)		# Include hidden files.
 # neofetch | lolcat
 
 
-[[ -f $ZDOTDIR/zsh_functions.zsh ]] && source $ZDOTDIR/zsh_functions.zsh
+[[ -f $ZDOTDIR/scripts/functions.zsh ]] && source $ZDOTDIR/scripts/functions.zsh
 
-safe-source $ZDOTDIR/zinit/zinit.zsh
+typeset -ga sources
 
-safe-source $ZDOTDIR/zinit/ziplugins.zsh
-safe-source $ZDOTDIR/zinit/fzf-bindings.zsh
-safe-source $ZDOTDIR/themes/theme.zsh
-safe-source $ZDOTDIR/key-bindings.zsh
+sources+="$ZDOTDIR/zinit/zinit.zsh"
+sources+="$ZDOTDIR/zinit/ziplugins.zsh"
+sources+="$ZDOTDIR/zinit/fzf-bindings.zsh"
+sources+="$ZDOTDIR/themes/theme.zsh"
 
-safe-source $ZDOTDIR/alias
+sources+="$ZDOTDIR/scripts/key-bindings.zsh"
+sources+="$ZDOTDIR/scripts/alias.zsh"
+sources+="$ZDOTDIR/scripts/completions.zsh"
+sources+="$ZDOTDIR/scripts/colouredman.zsh"
+
+# try to include all sources
+foreach file (`echo $sources`)
+  # sourceIncludeTimeStart=$(gdate +%s%N)
+  safe-source $file
+  # sourceIncludeDuration=$((($(gdate +%s%N) - $sourceIncludeTimeStart)/1000000))
+  # echo $sourceIncludeDuration ms runtime for $file
+end
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
+prebuilt on
 
 return 0

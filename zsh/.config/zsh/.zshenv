@@ -31,7 +31,7 @@ export RANDFILE="$XDG_DATA_HOME/rand"
 
 # GTK4 app theme
 # export GTK_THEME=Dracula
-export GTK_THEME="$(grep 'gtk-theme-name' "${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini" | sed 's/.*\s*=\s*//')"
+[[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini ]] && export GTK_THEME="$(grep 'gtk-theme-name' "${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini" | sed 's/.*\s*=\s*//')"
 
 # systemctl --user import-environment PATH
 

@@ -18,5 +18,9 @@ zi light junegunn/fzf
 
 
 # to compile zsh sources for a quicker startup
-module_path+=( "${ZI[HOME_DIR]}/zmodules/zpmod/Src" )
-zmodload zi/zpmod
+function prebuilt() {
+    if [[ $2 == 'on' ]] then
+        module_path+=( "${ZI[HOME_DIR]}/zmodules/zpmod/Src" )
+        zmodload zi/zpmod
+    fi
+}
