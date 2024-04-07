@@ -16,6 +16,9 @@ zi light hkbakke/bash-insulter
 zi ice from"gh-r" as"program"
 zi light junegunn/fzf
 
+zinit ice lucid as"program" pick"bin/git-dsf"
+zinit load so-fancy/diff-so-fancy
+
 
 # to compile zsh sources for a quicker startup
 function prebuilt() {
